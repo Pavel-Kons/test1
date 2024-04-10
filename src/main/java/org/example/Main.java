@@ -10,7 +10,7 @@ public class Main {
 
 //        String[] words = inputString.split(" ");
         String[] words = stringScan.split(" ");
-//test
+//test1
         int number1 = 0;
         char operator = 0;
         int number2 = 0;
