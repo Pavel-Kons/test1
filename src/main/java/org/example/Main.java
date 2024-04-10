@@ -1,20 +1,9 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-//        System.out.print("Input: ");
-//        Scanner stringScan = new Scanner(System.in);
-//        String inputString = stringScan.nextLine();
 
-        String stringScan = "9 / 3";
-
-//        String[] words = inputString.split(" ");
-        String[] splitWordsVariable = stringScan.split(" ");
-        int number1 = 0;
-        char operator = 0;
-        int number2 = 0;
-
-        String romanNumber = "I";
+    static void myMethod(String romanNumber) {
+        System.out.println("myMethodStarsHere");
         if (romanNumber == "I") {
             System.out.println(1);
         }
@@ -45,6 +34,21 @@ public class Main {
         if (romanNumber == "X") {
             System.out.println(10);
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+//        System.out.print("Input: ");
+//        Scanner stringScan = new Scanner(System.in);
+//        String inputString = stringScan.nextLine();
+        myMethod("V");
+        String stringScan = "9 / 3";
+
+//        String[] words = inputString.split(" ");
+        String[] splitWordsVariable = stringScan.split(" ");
+        int number1 = 0;
+        char operator = 0;
+        int number2 = 0;
+
 
         try {
             number1 = Integer.parseInt(splitWordsVariable[0]);
