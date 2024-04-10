@@ -2,37 +2,42 @@ package org.example;
 
 public class Main {
 
-    static void myMethod(String romanNumber) {
+    static int parseRomanNumber(String romanNumber) throws Exception {
         System.out.println("myMethodStarsHere");
-        if (romanNumber == "I") {
-            System.out.println(1);
-        }
-        if (romanNumber == "II") {
-            System.out.println(2);
-        }
-        if (romanNumber == "III") {
-            System.out.println(3);
-        }
-        if (romanNumber == "IV") {
-            System.out.println(4);
-        }
-        if (romanNumber == "V") {
-            System.out.println(5);
-        }
-        if (romanNumber == "VI") {
-            System.out.println(6);
-        }
-        if (romanNumber == "VII") {
-            System.out.println(7);
-        }
-        if (romanNumber == "VIII") {
-            System.out.println(8);
-        }
-        if (romanNumber == "IX") {
-            System.out.println(9);
-        }
-        if (romanNumber == "X") {
-            System.out.println(10);
+        switch (romanNumber) {
+            case "I": {
+                return 1;
+            }
+            case "II": {
+                return 2;
+            }
+            case "III": {
+                return 3;
+            }
+            case "IV": {
+                return 4;
+            }
+            case "V": {
+                return 5;
+            }
+            case "VI": {
+                return 6;
+            }
+            case "VII": {
+                return 7;
+            }
+            case "VIII": {
+                return 8;
+            }
+            case "IX": {
+                return 9;
+            }
+            case "X": {
+                return 10;
+            }
+            default: {
+                throw new Exception("Not a Roman number");
+            }
         }
     }
 
@@ -40,46 +45,52 @@ public class Main {
 //        System.out.print("Input: ");
 //        Scanner stringScan = new Scanner(System.in);
 //        String inputString = stringScan.nextLine();
-        myMethod("V");
-        String stringScan = "9 / 3";
+        String stringScan = "IX / III";
 
-//        String[] words = inputString.split(" ");
         String[] splitWordsVariable = stringScan.split(" ");
+        parseRomanNumber(splitWordsVariable[0]);
+        parseRomanNumber(splitWordsVariable[2]);
+
         int number1 = 0;
         char operator = 0;
         int number2 = 0;
 
+        int tempNumber = parseRomanNumber("X");
+        System.out.println(tempNumber);
 
-        try {
-            number1 = Integer.parseInt(splitWordsVariable[0]);
-            System.out.println("Converted integer: " + number1);
-            operator = splitWordsVariable[1].charAt(0);
-            number2 = Integer.parseInt(splitWordsVariable[2]);
-            System.out.println("Converted integer: " + number2);
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid integer input");
-        }
 
-        switch (operator) {
-            case '+': {
-                System.out.println(number1 + number2);
-                break;
-            }
-            case '-': {
-                System.out.println(number1 - number2);
-                break;
-            }
-            case '/': {
-                System.out.println(number1 / number2);
-                break;
-            }
-            case '*': {
-                System.out.println(number1 * number2);
-                break;
-            }
-            default: {
-                throw new Exception("Incorrect operator");
-            }
-        }
+//        - - - - - - - - ARABIC - - - -- -
+
+//        try {
+//            number1 = Integer.parseInt(splitWordsVariable[0]);
+//            System.out.println("Converted integer: " + number1);
+//            operator = splitWordsVariable[1].charAt(0);
+//            number2 = Integer.parseInt(splitWordsVariable[2]);
+//            System.out.println("Converted integer: " + number2);
+//        } catch (NumberFormatException e) {
+//            System.out.println("Invalid integer input");
+//        }
+//
+//        switch (operator) {
+//            case '+': {
+//                System.out.println(number1 + number2);
+//                break;
+//            }
+//            case '-': {
+//                System.out.println(number1 - number2);
+//                break;
+//            }
+//            case '/': {
+//                System.out.println(number1 / number2);
+//                break;
+//            }
+//            case '*': {
+//                System.out.println(number1 * number2);
+//                break;
+//            }
+//            default: {
+//                throw new Exception("Incorrect operator");
+//            }
+//        }
     }
 }
