@@ -3,7 +3,6 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
-
     static int parseRomanNumber(String romanNumber) throws Exception {
         switch (romanNumber) {
             case "I": {
