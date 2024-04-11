@@ -1,9 +1,10 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
 
     static int parseRomanNumber(String romanNumber) throws Exception {
-        System.out.println("myMethodStarsHere");
         switch (romanNumber) {
             case "I": {
                 return 1;
@@ -42,55 +43,47 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-//        System.out.print("Input: ");
-//        Scanner stringScan = new Scanner(System.in);
-//        String inputString = stringScan.nextLine();
-        String stringScan = "IX / III";
+        System.out.print("Input: \n");
+        Scanner scanObject = new Scanner(System.in);
+        String stringScan = scanObject.nextLine();
 
-        String[] splitWordsVariable = stringScan.split(" ");
-        parseRomanNumber(splitWordsVariable[0]);
-        parseRomanNumber(splitWordsVariable[2]);
+//        String stringScan = "9 / 3"; //TEMP STRING
 
         int number1 = 0;
         char operator = 0;
         int number2 = 0;
 
-        int tempNumber = parseRomanNumber("X");
-        System.out.println(tempNumber);
+        String[] splitWordsVariable = stringScan.split(" ");
 
+        try {
+            number1 = Integer.parseInt(splitWordsVariable[0]);
+            number2 = Integer.parseInt(splitWordsVariable[2]);
+        } catch (NumberFormatException e) {
+            number1 = parseRomanNumber(splitWordsVariable[0]);
+            number2 = parseRomanNumber(splitWordsVariable[2]);
+        }
 
-//        - - - - - - - - ARABIC - - - -- -
-
-//        try {
-//            number1 = Integer.parseInt(splitWordsVariable[0]);
-//            System.out.println("Converted integer: " + number1);
-//            operator = splitWordsVariable[1].charAt(0);
-//            number2 = Integer.parseInt(splitWordsVariable[2]);
-//            System.out.println("Converted integer: " + number2);
-//        } catch (NumberFormatException e) {
-//            System.out.println("Invalid integer input");
-//        }
-//
-//        switch (operator) {
-//            case '+': {
-//                System.out.println(number1 + number2);
-//                break;
-//            }
-//            case '-': {
-//                System.out.println(number1 - number2);
-//                break;
-//            }
-//            case '/': {
-//                System.out.println(number1 / number2);
-//                break;
-//            }
-//            case '*': {
-//                System.out.println(number1 * number2);
-//                break;
-//            }
-//            default: {
-//                throw new Exception("Incorrect operator");
-//            }
-//        }
+        operator = splitWordsVariable[1].charAt(0);
+        switch (operator) {
+            case '+': {
+                System.out.println("Output: \n" + (number1 + number2));
+                break;
+            }
+            case '-': {
+                System.out.println("Output: \n" + (number1 - number2));
+                break;
+            }
+            case '/': {
+                System.out.println("Output: \n" + (number1 / number2));
+                break;
+            }
+            case '*': {
+                System.out.println("Output: \n" + (number1 * number2));
+                break;
+            }
+            default: {
+                throw new Exception("Incorrect operator");
+            }
+        }
     }
 }
