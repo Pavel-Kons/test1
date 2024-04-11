@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
+
 public class Main {
     static int parseRomanNumber(String romanNumber) throws Exception {
         return switch (romanNumber) {
@@ -19,6 +20,7 @@ public class Main {
         };
     }
 
+
     public static String intToRoman(int number) {
         String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
         String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
@@ -26,22 +28,25 @@ public class Main {
         return hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + units[number % 10];
     }
 
+
     public static void main(String[] args) throws Exception {
         System.out.print("Input: \n");
         Scanner scanObject = new Scanner(System.in);
         String stringScan = scanObject.nextLine();
-
 //        String stringScan = "X * X"; //TEMP STRING
+
 
         int number1 = 0;
         char operator = 0;
         int number2 = 0;
         boolean romanOutput = false;
 
+
         String[] arguments = stringScan.split(" ");
         if (arguments.length > 3) {
             throw new Exception("Too many variables");
         }
+
 
         try {
             number1 = Integer.parseInt(arguments[0]);
@@ -54,6 +59,8 @@ public class Main {
         if (number1 > 10 || number2 > 10 || number1 < 1 || number2 < 1) {
             throw new Exception("Value must be more than 0 and less than 11");
         }
+
+
         operator = arguments[1].charAt(0);
         if (romanOutput) {
             int ConvertIntToRoman = 0;
